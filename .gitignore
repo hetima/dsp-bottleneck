@@ -10,3 +10,4 @@ obj/
 /tmp_release/README.md
 /tmp/README.md
 /tmp_release/
+!dll/Bottleneck.dll
