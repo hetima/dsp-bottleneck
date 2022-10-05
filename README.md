@@ -1,3 +1,21 @@
+# About this fork
+
+Removed dependency on Common-API.  
+As a result, the text will no longer be translated.
+
+[download dll](https://github.com/hetima/dsp-bottleneck/tree/master/dll)
+
+
+---
+
+---
+
+---
+
+---
+
+---
+
 # Bottleneck
 
 _You can find readme files in other languages here_
