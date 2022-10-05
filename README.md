@@ -1,6 +1,6 @@
 # About this fork
 
-Removed dependency on Common-API.  
+Removed dependency on CommonAPI.  
 As a result, texts will no longer be translated.
 
 [download dll](https://github.com/hetima/dsp-bottleneck/tree/master/dll)
