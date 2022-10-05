@@ -86,8 +86,8 @@ namespace Bottleneck.Util
                 // don't add
                 return $"UNKNOWN_RECIPE_${recipeId}";
             }
-            
-            _recipeNames[recipeId] = recipeProto.Name.Translate(PluginConfig.GetLanguage());
+
+            _recipeNames[recipeId] = recipeProto.Name.Translate();
             return _recipeNames[recipeId];
         }
     }
