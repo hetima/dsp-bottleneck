@@ -271,29 +271,29 @@ namespace Bottleneck.Stats
             __instance.consumeUnitLabel.GetComponent<RectTransform>().anchoredPosition = new Vector2(initialXOffset + valuesWidth + 4, -4);
 
             var maxProductionLabel = CopyText(__instance.productLabel, new Vector2(maxOffset, 0));
-            maxProductionLabel.text = "theoreticalMaxLabel".BottleneckString(PluginConfig.GetLanguage()); 
+            maxProductionLabel.text = "Theoretical max";// "theoreticalMaxLabel".BottleneckString(PluginConfig.GetLanguage()); 
             var maxProductionValue = CopyText(__instance.productText, new Vector2(maxOffset, 0));
             maxProductionValue.text = "0";
             var maxProductionUnit = CopyText(__instance.productUnitLabel, new Vector2(maxOffset, 0));
-            maxProductionUnit.text = "perMinLabel".BottleneckString(PluginConfig.GetLanguage());
+            maxProductionUnit.text = "/min"; //"perMinLabel".BottleneckString(PluginConfig.GetLanguage());
 
             var maxConsumptionLabel = CopyText(__instance.consumeLabel, new Vector2(maxOffset, 0));
-            maxConsumptionLabel.text = "theoreticalMaxLabel".BottleneckString(PluginConfig.GetLanguage());
+            maxConsumptionLabel.text = "Theoretical max";//"theoreticalMaxLabel".BottleneckString(PluginConfig.GetLanguage());
             var maxConsumptionValue = CopyText(__instance.consumeText, new Vector2(maxOffset, 0));
             maxConsumptionValue.text = "0";
             var maxConsumptionUnit = CopyText(__instance.consumeUnitLabel, new Vector2(maxOffset, 0));
-            maxConsumptionUnit.text = "perMinLabel";
+            maxConsumptionUnit.text = "/min";// "perMinLabel";
 
             var counterProductionLabel = CopyText(__instance.productLabel, new Vector2(-initialXOffset, 0));
             counterProductionLabel.GetComponent<RectTransform>().sizeDelta = new Vector2(60, 40);
-            counterProductionLabel.text = "producersLabel".BottleneckString(PluginConfig.GetLanguage());
+            counterProductionLabel.text = "Producers";// "producersLabel".BottleneckString(PluginConfig.GetLanguage());
             var counterProductionValue = CopyText(__instance.productText, new Vector2(-initialXOffset, 0));
             counterProductionValue.GetComponent<RectTransform>().sizeDelta = new Vector2(60, 40);
             counterProductionValue.text = "0";
 
             var counterConsumptionLabel = CopyText(__instance.consumeLabel, new Vector2(-initialXOffset, 0));
             counterConsumptionLabel.GetComponent<RectTransform>().sizeDelta = new Vector2(60, 40);
-            counterConsumptionLabel.text = "consumersLabel".BottleneckString(PluginConfig.GetLanguage());
+            counterConsumptionLabel.text = "Consumers"; // "consumersLabel".BottleneckString(PluginConfig.GetLanguage());
             var counterConsumptionValue = CopyText(__instance.consumeText, new Vector2(-initialXOffset, 0));
             counterConsumptionValue.GetComponent<RectTransform>().sizeDelta = new Vector2(60, 40);
             counterConsumptionValue.text = "0";
@@ -393,7 +393,7 @@ namespace Bottleneck.Stats
             rectTxt.anchoredPosition = new Vector2(20, 0);
 
             Text text = rectTxt.gameObject.AddComponent<Text>();
-            text.text = "dispPerSecLabel".BottleneckString(PluginConfig.GetLanguage());
+            text.text = "Display /sec"; //"dispPerSecLabel".BottleneckString(PluginConfig.GetLanguage());
             text.fontStyle = FontStyle.Normal;
             text.fontSize = 14;
             text.verticalOverflow = VerticalWrapMode.Overflow;
@@ -442,7 +442,7 @@ namespace Bottleneck.Stats
             _placeholder.alignment = TextAnchor.MiddleLeft;
             _placeholder.supportRichText = false;
             _placeholder.horizontalOverflow = HorizontalWrapMode.Overflow;
-            _placeholder.text = "filterLabel".BottleneckString(PluginConfig.GetLanguage());
+            _placeholder.text = "Filter"; // "filterLabel".BottleneckString(PluginConfig.GetLanguage());
             (_placeholder.transform as RectTransform).sizeDelta = new Vector2(90, 30);
             (_placeholder.transform as RectTransform).anchoredPosition = new Vector2(5, 0);
 
@@ -530,8 +530,8 @@ namespace Bottleneck.Stats
             string consumers = "0";
             string maxProduction = "0";
             string maxConsumption = "0";
-            string unitRate = PluginConfig.displayPerSecond.Value ? "perSecLabel".BottleneckString(PluginConfig.GetLanguage()) : "perMinLabel".BottleneckString(PluginConfig.GetLanguage());
-            string unit = isTotalTimeWindow ? "" : "perMinLabel".BottleneckString(PluginConfig.GetLanguage());
+            string unitRate = PluginConfig.displayPerSecond.Value ? "/sec" : "/min";
+            string unit = isTotalTimeWindow ? "" : "/min";
             int divider = 1;
             bool alertOnLackOfProduction = false;
             bool warnOnHighMaxConsumption = false;
@@ -540,7 +540,7 @@ namespace Bottleneck.Stats
             if (PluginConfig.displayPerSecond.Value)
             {
                 divider = 60;
-                unit = !isTotalTimeWindow ? "perSecLabel".BottleneckString(PluginConfig.GetLanguage()) : unit;
+                unit = !isTotalTimeWindow ? "/sec" : unit;
 
                 if (!isTotalTimeWindow)
                 {

@@ -5,18 +5,18 @@ namespace Bottleneck.UI
 {
     public static class Strings
     {
-        public static string BottleneckString(this string s, Language language = Language.enUS)
-        {
-            if (s == null)
-            {
-                return "";
-            }
-            if (_strings.TryGetValue(s, out string result))
-            {
-                return result;
-            }
-            return s;
-        }
+        //public static string BottleneckString(this string s, Language language = Language.enUS)
+        //{
+        //    if (s == null)
+        //    {
+        //        return "";
+        //    }
+        //    if (_strings.TryGetValue(s, out string result))
+        //    {
+        //        return result;
+        //    }
+        //    return s;
+        //}
 
         internal static Dictionary<string, string> _strings = new();
         internal static void AddToDictionary(params string[] ary)
@@ -75,21 +75,21 @@ namespace Bottleneck.UI
             AddToDictionary("recipePreText", "Recipe", "配方");
         }
 
-        public static string NeedLabel => "needLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string CurrentLabel => "currentLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string StackingLabel => "stackingLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string UnderPoweredLabel => "underPoweredLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string MissingSprayLabel => "missingSprayLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string BottlenecksLabel => "bottlenecksLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string ProliferatorCalculationDisabled => "proliferatorCalcDisabledLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string ProliferatorCalculationDisabledHover => "proliferatorCalcDisabledHover".BottleneckString(PluginConfig.GetLanguage());
-        public static string ProliferatorCalculationEnabled => "proliferatorCalcEnabledLabel".BottleneckString(PluginConfig.GetLanguage());
-        public static string AssemblerSelectionMode => "assemblerSelection".BottleneckString(PluginConfig.GetLanguage());
-        public static string AssemblerSelectionHover => "assemblerSelectionHover".BottleneckString(PluginConfig.GetLanguage());
-        public static string ForceProductivityMode => "forceProductivity".BottleneckString(PluginConfig.GetLanguage());
-        public static string ForceProductivityHover => "forceProductivityHover".BottleneckString(PluginConfig.GetLanguage());
-        public static string ForceSpeedMode => "forceSpeed".BottleneckString(PluginConfig.GetLanguage());
-        public static string ForceSpeedModeHover => "forceSpeedHover".BottleneckString(PluginConfig.GetLanguage());
-        public static string RecipePreText => "recipePreText".BottleneckString(PluginConfig.GetLanguage());
+        public static string NeedLabel => "Need";//"needLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string CurrentLabel => "current";//"currentLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string StackingLabel => "Stacking";//"stackingLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string UnderPoweredLabel => "Under Powered";//"underPoweredLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string MissingSprayLabel => "Missing spray";//"missingSprayLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string BottlenecksLabel => "Bottlenecks";//"bottlenecksLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string ProliferatorCalculationDisabled => "Proliferator Calculation Disabled";//"proliferatorCalcDisabledLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string ProliferatorCalculationDisabledHover => "Don't use Proliferator Points for calculation of Theoretical max values";//"proliferatorCalcDisabledHover".BottleneckString(PluginConfig.GetLanguage());
+        public static string ProliferatorCalculationEnabled => "Proliferator Calculation Enabled";//"proliferatorCalcEnabledLabel".BottleneckString(PluginConfig.GetLanguage());
+        public static string AssemblerSelectionMode => "Assembler Selection Mode";//"assemblerSelection".BottleneckString(PluginConfig.GetLanguage());
+        public static string AssemblerSelectionHover => "Max values calculated using currently selected mode for each assembler.";//"assemblerSelectionHover".BottleneckString(PluginConfig.GetLanguage());
+        public static string ForceProductivityMode => "Force Productivity Mode";//"forceProductivity".BottleneckString(PluginConfig.GetLanguage());
+        public static string ForceProductivityHover => "Max values calculated as if all all assemblers were set to 'Extra Products'.";//"forceProductivityHover".BottleneckString(PluginConfig.GetLanguage());
+        public static string ForceSpeedMode => "Force Speed Mode";//"forceSpeed".BottleneckString(PluginConfig.GetLanguage());
+        public static string ForceSpeedModeHover => "Max values calculated as if all all assemblers were set to 'Production Speedup'.";//"forceSpeedHover".BottleneckString(PluginConfig.GetLanguage());
+        public static string RecipePreText => "Recipe";//"recipePreText".BottleneckString(PluginConfig.GetLanguage());
     }
 }

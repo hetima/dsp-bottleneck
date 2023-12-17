@@ -267,9 +267,9 @@ namespace Bottleneck
             if (!__instance.isDysonTab && __instance.gameData.localPlanet != null && instanceAstroBox.Items.Count > 2)
             {
                 int starId = __instance.gameData.localStar.id;
-                if (instanceAstroBox.Items[2] != "localSystemLabel".BottleneckString(PluginConfig.GetLanguage()))
+                if (instanceAstroBox.Items[2] != "Local System"/*"localSystemLabel".BottleneckString(PluginConfig.GetLanguage())*/)
                 {
-                    instanceAstroBox.Items.Insert(2, "localSystemLabel".BottleneckString(PluginConfig.GetLanguage()));
+                    instanceAstroBox.Items.Insert(2, "Local System"/*"localSystemLabel".BottleneckString(PluginConfig.GetLanguage())*/);
                     instanceAstroBox.ItemsData.Insert(2, starId * 100);
                 }
             }
@@ -489,7 +489,7 @@ namespace Bottleneck
 
         public void GetPrecursorButtonTip(int productId, out string tipTitle, out string tipText)
         {
-            tipTitle = "prodDetailsLabel".BottleneckString(PluginConfig.GetLanguage());
+            tipTitle = "Production Details";// "prodDetailsLabel".BottleneckString(PluginConfig.GetLanguage());
             tipText = "";
 
             if (NebulaCompat.IsClient)
@@ -500,13 +500,13 @@ namespace Bottleneck
             }
 
             if (ItemUtil.HasPrecursors(productId))
-                tipTitle += "clickPrecursorText".BottleneckString(PluginConfig.GetLanguage());
+                tipTitle += " (click to show only precursor items)";//"clickPrecursorText".BottleneckString(PluginConfig.GetLanguage());
             if (_productionLocations.ContainsKey(productId))
             {
                 if (_enableMadeOn)
                 {
-                    var parensMessage = ItemUtil.HasPrecursors(productId) ? "controlClickLacking".BottleneckString(PluginConfig.GetLanguage()) : "";
-                    var producedOnText = "producedOnLabel".BottleneckString(PluginConfig.GetLanguage());
+                    var parensMessage = ItemUtil.HasPrecursors(productId) ? "(Control click see only precursors that are lacking)\r\n" /*"controlClickLacking".BottleneckString(PluginConfig.GetLanguage())*/ : "";
+                    var producedOnText = "Produced on"; //"producedOnLabel".BottleneckString(PluginConfig.GetLanguage());
                     tipText = $"{parensMessage}<b>{producedOnText}</b>\r\n" + _productionLocations[productId].GetProducerSummary();
                     if (_productionLocations[productId].PlanetCount() > PluginConfig.productionPlanetCount.Value)
                         tipTitle += $" (top {PluginConfig.productionPlanetCount.Value} / {_productionLocations[productId].PlanetCount()} planets)";
@@ -524,7 +524,7 @@ namespace Bottleneck
 
         public void GetSuccessorButtonTip(int productId, out string tipTitle, out string tipText)
         {
-            tipTitle = "conDetailsLabel".BottleneckString(PluginConfig.GetLanguage());
+            tipTitle = "Consumption Details"; //"conDetailsLabel".BottleneckString(PluginConfig.GetLanguage());
             tipText = "";
 
             if (NebulaCompat.IsClient)
@@ -535,10 +535,10 @@ namespace Bottleneck
             }
 
             if (ItemUtil.HasConsumers(productId))
-                tipTitle += "clickConsumingText".BottleneckString(PluginConfig.GetLanguage());
+                tipTitle += " (click to show only consuming items)";// "clickConsumingText".BottleneckString(PluginConfig.GetLanguage());
             if (_productionLocations.ContainsKey(productId) && _enableMadeOn)
-            { 
-                var consumedOnText = "consumedOnLabel".BottleneckString(PluginConfig.GetLanguage());
+            {
+                var consumedOnText = "Consumed on"; // "consumedOnLabel".BottleneckString(PluginConfig.GetLanguage());
 
                 tipText = $"<b>{consumedOnText}</b>\r\n" + _productionLocations[productId].GetConsumerSummary();
                 if (_productionLocations[productId].ConsumerPlanetCount() > PluginConfig.productionPlanetCount.Value)
@@ -750,7 +750,7 @@ namespace Bottleneck
             rectTxt.anchoredPosition = new Vector2(20, 0);
             objsToDestroy.Add(rectTxt.gameObject);
             Text text = rectTxt.gameObject.AddComponent<Text>();
-            text.text = "clearFilterLabel".BottleneckString(PluginConfig.GetLanguage());
+            text.text = "Clear filter";//"clearFilterLabel".BottleneckString(PluginConfig.GetLanguage());
             text.fontStyle = FontStyle.Normal;
             text.fontSize = 12;
             text.verticalOverflow = VerticalWrapMode.Overflow;
