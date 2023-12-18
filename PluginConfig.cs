@@ -57,7 +57,7 @@ namespace Bottleneck
             //            languages.ToArray()
             //        )));
             // force this setting to empty so that it has to be set at runtime and can't be left on by accident
-            testOverrideLanguage.Value = "";
+            //testOverrideLanguage.Value = "";
         }
 
         //public static Language GetLanguage()
